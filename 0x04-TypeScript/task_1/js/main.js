@@ -18,19 +18,15 @@ function printTeacher(firstName, lastName) {
     return "".concat(firstName[0], ". ").concat(lastName);
 }
 console.log(printTeacher("John", "Doe")); // Output: J. Doe
-var StudentClass = /** @class */ (function () {
-    function StudentClass(firstName, lastName) {
+var TeacherClass = /** @class */ (function () {
+    function TeacherClass(firstName, lastName, fullTimeEmployee, location, contract) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.fullTimeEmployee = fullTimeEmployee;
+        this.location = location;
+        this.contract = contract;
     }
-    StudentClass.prototype.workOnHomework = function () {
-        return 'Currently working';
-    };
-    StudentClass.prototype.displayName = function () {
-        return this.firstName;
-    };
-    return StudentClass;
+    return TeacherClass;
 }());
-var student = new StudentClass("John", "Doe");
-console.log(student.displayName()); // Output: John
-console.log(student.workOnHomework()); // Output: Currently working
+var newTeacher = new TeacherClass('Jane', 'Smith', true, 'New York', false);
+console.log(newTeacher);

@@ -45,29 +45,25 @@ function printTeacher(firstName: string, lastName: string): string {
 console.log(printTeacher("John", "Doe")); // Output: J. Doe
 
 // Task 4: Class for a Teacher
-interface Student {
-  firstName: string;
-  lastName: string;
+interface TeacherConstructor {
+  new(firstName: string, lastName: string, fullTimeEmployee: boolean, location: string, contract: boolean): Teacher;
 }
 
-class StudentClass implements Student {
+class TeacherClass implements Teacher {
   firstName: string;
   lastName: string;
+  fullTimeEmployee: boolean;
+  location: string;
+  [propName: string]: any;
 
-  constructor(firstName: string, lastName: string) {
+  constructor(firstName: string, lastName: string, fullTimeEmployee: boolean, location: string, contract: boolean) {
     this.firstName = firstName;
     this.lastName = lastName;
-  }
-
-  workOnHomework(): string {
-    return 'Currently working';
-  }
-
-  displayName(): string {
-    return this.firstName;
+    this.fullTimeEmployee = fullTimeEmployee;
+    this.location = location;
+    this.contract = contract;
   }
 }
 
-const student = new StudentClass("John", "Doe");
-console.log(student.displayName()); // Output: John
-console.log(student.workOnHomework()); // Output: Currently working
+const newTeacher = new TeacherClass('Jane', 'Smith', true, 'New York', false);
+console.log(newTeacher);
