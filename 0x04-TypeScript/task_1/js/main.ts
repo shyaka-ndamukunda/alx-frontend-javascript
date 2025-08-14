@@ -39,8 +39,8 @@ interface printTeacherFunction {
 }
 
 function printTeacher(firstName: string, lastName: string): string {
-  // This is a test comment. It won't affect the function's output.
-  return `${firstName[0]}. ${lastName}`;
+  const firstInitial = firstName.charAt(0);
+  return firstInitial + ". " + lastName;
 }
 
 console.log(printTeacher("John", "Doe")); // Output: J. Doe

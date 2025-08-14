@@ -15,7 +15,7 @@ var director1 = {
 };
 console.log(director1);
 function printTeacher(firstName, lastName) {
-    // This is a test comment. It won't affect the function's output.
-    return "".concat(firstName[0], ". ").concat(lastName);
+    var firstInitial = firstName.charAt(0);
+    return firstInitial + ". " + lastName;
 }
 console.log(printTeacher("John", "Doe")); // Output: J. Doe
