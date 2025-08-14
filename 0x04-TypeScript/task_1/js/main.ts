@@ -38,8 +38,36 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-function printTeacher({ firstName, lastName }: { firstName: string, lastName: string }): string {
+function printTeacher(firstName: string, lastName: string): string {
   return `${firstName[0]}. ${lastName}`;
 }
 
-console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
+console.log(printTeacher("John", "Doe")); // Output: J. Doe
+
+// Task 4: Class for a Teacher
+interface Student {
+  firstName: string;
+  lastName: string;
+}
+
+class StudentClass implements Student {
+  firstName: string;
+  lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return 'Currently working';
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
+const student = new StudentClass("John", "Doe");
+console.log(student.displayName()); // Output: John
+console.log(student.workOnHomework()); // Output: Currently working

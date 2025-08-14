@@ -14,8 +14,23 @@ var director1 = {
     numberOfReports: 17,
 };
 console.log(director1);
-function printTeacher(_a) {
-    var firstName = _a.firstName, lastName = _a.lastName;
+function printTeacher(firstName, lastName) {
     return "".concat(firstName[0], ". ").concat(lastName);
 }
-console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
+console.log(printTeacher("John", "Doe")); // Output: J. Doe
+var StudentClass = /** @class */ (function () {
+    function StudentClass(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    StudentClass.prototype.workOnHomework = function () {
+        return 'Currently working';
+    };
+    StudentClass.prototype.displayName = function () {
+        return this.firstName;
+    };
+    return StudentClass;
+}());
+var student = new StudentClass("John", "Doe");
+console.log(student.displayName()); // Output: John
+console.log(student.workOnHomework()); // Output: Currently working
