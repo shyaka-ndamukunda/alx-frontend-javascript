@@ -18,12 +18,12 @@ const teacher3: Teacher = {
 
 console.log(teacher3);
 
-// Task 2: Directors interface
-interface Directors extends Teacher {
+// Task 2: Director interface (Corrected name)
+interface Director extends Teacher {
   numberOfReports: number;
 }
 
-const director1: Directors = {
+const director1: Director = {
   firstName: 'John',
   lastName: 'Doe',
   location: 'London',
