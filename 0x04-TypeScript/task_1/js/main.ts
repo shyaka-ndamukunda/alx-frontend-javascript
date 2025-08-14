@@ -39,6 +39,7 @@ interface printTeacherFunction {
 }
 
 function printTeacher(firstName: string, lastName: string): string {
+  // This is a test comment. It won't affect the function's output.
   return `${firstName[0]}. ${lastName}`;
 }
 
